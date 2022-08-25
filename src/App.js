@@ -62,6 +62,13 @@ function App() {
             setErrorMessage(null)
           }, 5000)
         })
+        .catch(err => {
+          setMessageSuccess(false)
+          setErrorMessage(err.err)
+          setTimeout(() => {
+            setErrorMessage(null)
+          }, 5000)
+        })
     }
     else {
       if (window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)) {
